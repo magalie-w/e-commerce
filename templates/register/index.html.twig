@@ -1,9 +1,64 @@
+{% form_theme form 'tailwind_2_layout.html.twig' %}
+
 {% extends 'base.html.twig' %}
 
 {% block title %}Inscription{% endblock %}
 
 {% block content %}
-    <h1>Inscription</h1>
+<div class="mx-auto w-[900px]">
+    <h1 class="text-center text-lg pt-5">Inscription</h1>
 
-    {{ form(form) }}
+    {{ form_start(form) }}
+        <div class="mx-auto w-[500px] space-y-5">    
+            <div>
+                {{ form_errors(form) }}
+            </div>
+
+            <div>
+                {{ form_row(form.firstname, {
+                    row_class: 'grid',
+                    label_class: 'text-center',
+                    widget_class: 'w-[500px] rounded',
+                }) }}
+            </div>
+
+            <div>
+                {{ form_row(form.lastname, {
+                    row_class: 'grid',
+                    label_class: 'text-center',
+                    widget_class: 'w-[500px] rounded',
+                }) }}
+            </div>
+
+            <div>
+                {{ form_row(form.email, {
+                    row_class: 'grid',
+                    label_class: 'text-center',
+                    widget_class: 'w-[500px] rounded',
+                }) }}
+            </div>
+
+            <div>
+                {{ form_row(form.password, {
+                    row_class: 'grid',
+                    label_class: 'text-center',
+                    widget_class: 'w-[500px] rounded',
+                }) }}
+            </div>
+
+            <div>
+                {{ form_row(form.password_confirm, {
+                    row_class: 'grid',
+                    label_class: 'text-center',
+                    widget_class: 'w-[500px] rounded',
+                }) }}
+            </div>
+
+            <div class="w-[200px] mx-auto text-center bg-blue-500 rounded py-1 px-3 text-white">
+                {{ form_row(form.submit) }}
+            </div>
+        </div>
+    {{ form_end(form) }}
+</div>
+
 {% endblock %}
