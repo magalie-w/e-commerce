@@ -38,21 +38,19 @@
                 }) }}
             </div>
 
-            <div>
+            <div class="grid text-center space-y-5">
                 {{ form_row(form.password, {
-                    row_class: 'grid',
-                    label_class: 'text-center',
-                    widget_class: 'w-[500px] rounded',
+                    
                 }) }}
             </div>
 
-            <div>
+            {# <div>
                 {{ form_row(form.password_confirm, {
                     row_class: 'grid',
                     label_class: 'text-center',
                     widget_class: 'w-[500px] rounded',
                 }) }}
-            </div>
+            </div> #}
 
             <div class="w-[200px] mx-auto text-center bg-blue-500 rounded py-1 px-3 text-white">
                 {{ form_row(form.submit) }}
